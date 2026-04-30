@@ -60,13 +60,13 @@ class ApiRemove {
             token: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5ZGFmYzIyNjYxNDEyNTE3MjlkZjU1MSIsIm5hbWUiOiIzbGFhIiwicm9sZSI6InVzZXIiLCJpYXQiOjE3NzU5NTkxMTksImV4cCI6MTc4MzczNTExOX0.SLTsuehbTyyiqod0kI2-KeC3XEj_XDd2W9zcoaR9xIo"
         }
     }
-    async removeProductCart(productId: string): Promise<any> {
+    async removeProductCart(productId: string): Promise<unknown> {
         return fetch(this.#baseUrl + "api/v1/cart/" + productId, {
             method: 'DELETE',
             headers: this.#getHeaders(),
         }).then(res => res.json())
     }
-    async clearCart(): Promise<any> {
+    async clearCart(): Promise<unknown> {
         return fetch(this.#baseUrl + "api/v1/cart", {
             method: 'DELETE',
             headers: this.#getHeaders(),
