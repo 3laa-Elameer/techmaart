@@ -1,14 +1,17 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.css";
+// import "./globals.css";
 import { Footer, Navbar } from "@/components";
 import { ReactNode } from "react";
 import { Toaster } from 'react-hot-toast';
+import { apiServices } from "@/services/api";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
 });
+const cartData = await apiServices.getUserCart();
+
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
@@ -60,7 +63,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         />
       </head>
       <body className="bg-white text-black dark:bg-gray-900 dark:text-white transition-colors duration-300">
-        <Navbar />
+        <Navbar cartData={cartData} />
         {children}
         <Toaster />
         <Footer />
