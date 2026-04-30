@@ -6,6 +6,7 @@ import { formatPrice } from '@/helpers/currency'
 import { CartProduct as CartProductI, InnerCartProduct } from '@/interfaces'
 import Image from 'next/image'
 import Link from 'next/link'
+import { s } from 'framer-motion/client';
 
 interface CartProductProps {
     item: CartProductI<InnerCartProduct>
@@ -15,6 +16,7 @@ interface CartProductProps {
 export default function CartProduct({ item, handleRemoveCartItem }: CartProductProps) {
     const [loading, setLoading] = useState(false);
     // handleRemoveCartItem(item.product._id, setLoading);
+    const [count, setCount] = useState(item.count);
 
 
     return (<div key={item._id} className="flex gap-4 p-4 border rounded-lg">
@@ -55,11 +57,30 @@ export default function CartProduct({ item, handleRemoveCartItem }: CartProductP
             </Button>
 
             <div className="flex items-center gap-2">
-                <Button variant="outline" size="sm">
+                {/* <Button onClick={() => {item.count-1}} variant="outline" size="sm">
+                    <Minus className="h-4 w-4" />
+                </Button> */}
+                {/* <Button
+                    onClick={() => setCount(count - 1),<CartProduct item={item} handleRemoveCartItem={handleRemoveCartItem} />}
+                    variant="outline"
+                    size="sm"
+                >
+                    <Minus className="h-4 w-4" />
+                </Button> */}
+                <Button
+                    onClick={() => {
+                        setCount(count - 1);
+                        handleRemoveCartItem(item.product._id, setLoading);
+                    }}
+                    variant="outline"
+                    size="sm"
+                >
                     <Minus className="h-4 w-4" />
                 </Button>
-                <span className="w-8 text-center">{item.count}</span>
-                <Button variant="outline" size="sm">
+                <span className="w-8 text-center">{count}</span>
+                <Button
+                    onClick={async () => { await handleRemoveCartItem(item.product._id, setLoading); }}
+                    variant="outline" size="sm">
                     <Plus className="h-4 w-4" />
                 </Button>
             </div>

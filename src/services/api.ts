@@ -29,7 +29,7 @@ class ApiServices {
     #getHeaders() {
         return {
             "Content-Type": "application/json",
-            token: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5ZGFmYzIyNjYxNDEyNTE3MjlkZjU1MSIsIm5hbWUiOiIzbGFhIiwicm9sZSI6InVzZXIiLCJpYXQiOjE3NzU5NTkwNzQsImV4cCI6MTc4MzczNTA3NH0.jwFZ9kZV24FCSRNTb_gCNmCyKnzMX6OuRC7MLhAZcmg"
+            token: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5ZGFmYzIyNjYxNDEyNTE3MjlkZjU1MSIsIm5hbWUiOiIzbGFhIiwicm9sZSI6InVzZXIiLCJpYXQiOjE3NzU5NTkxMTksImV4cCI6MTc4MzczNTExOX0.SLTsuehbTyyiqod0kI2-KeC3XEj_XDd2W9zcoaR9xIo"
         }
     }
     async addProducrtToCart(productId: string): Promise<AddToCartResponse> {
@@ -57,7 +57,7 @@ class ApiRemove {
     #getHeaders() {
         return {
             "Content-Type": "application/json",
-            token: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5ZGFmYzIyNjYxNDEyNTE3MjlkZjU1MSIsIm5hbWUiOiIzbGFhIiwicm9sZSI6InVzZXIiLCJpYXQiOjE3NzU5NTkwNzQsImV4cCI6MTc4MzczNTA3NH0.jwFZ9kZV24FCSRNTb_gCNmCyKnzMX6OuRC7MLhAZcmg"
+            token: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5ZGFmYzIyNjYxNDEyNTE3MjlkZjU1MSIsIm5hbWUiOiIzbGFhIiwicm9sZSI6InVzZXIiLCJpYXQiOjE3NzU5NTkxMTksImV4cCI6MTc4MzczNTExOX0.SLTsuehbTyyiqod0kI2-KeC3XEj_XDd2W9zcoaR9xIo"
         }
     }
     async removeProductCart(productId: string): Promise<any> {
