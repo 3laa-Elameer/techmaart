@@ -66,7 +66,7 @@ export default function InnerCart({ cartData }: InnerCartProps) {
                         <div className="lg:col-span-2">
                             <div className="space-y-4">
                                 {InnertCartData.data.products.map((item) => (
-                                    <CartProduct handleRemoveCartItem={handleRemoveCartItem} item={item} />
+                                    <CartProduct handleRemoveCartItem={handleRemoveCartItem} item={item} key={item._id} />
                                 ))}
                             </div>
 

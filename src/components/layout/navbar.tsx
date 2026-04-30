@@ -14,7 +14,7 @@ import { cn } from "@/lib/utils";
 import React, { useState } from "react";
 import ThemeToggle from "./darkMode";
 interface NavbarProps {
-  cartData: any;
+  cartData: unknown;
 }
 export function Navbar({ cartData }: NavbarProps) {
   const pathname = usePathname();
@@ -81,7 +81,7 @@ export function Navbar({ cartData }: NavbarProps) {
                 <span className="absolute -top-1 -right-1 h-4 w-4 rounded-full bg-primary text-xs text-primary-foreground flex items-center justify-center">
                   {/* {InnertCartData.numOfCartItems} */}
                   {/* {cartData?.numOfCartItems ?? 0} */}
-                  {InnertCartData?.numOfCartItems ?? 0}
+                  {/* {InnertCartData?.numOfCartItems ?? 0} */}
                 </span>
                 <span className="sr-only">Shopping cart</span>
               </Button>
